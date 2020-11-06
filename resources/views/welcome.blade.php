@@ -81,7 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Hello {{ auth()->user()->name }}
+                    {{-- You must be logged id to see the code or the page will display an error. To remove the error I've put ?? '' witch translate in if the value does not exist then return an empty string --}}
+                   Hello {{ auth()->user()->name ?? ''}}
+
+                   {{-- 
+                        The {{}} is almost like a echo. However, to write html or javasctipt, you need to do like this:
+
+                        {!! "<b>Hello</b>" !!}
+                        {!! "<script>alert('Hello');</script>" !!} 
+                   --}}
+
                 </div>
 
                 <div class="links">
